@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="bn" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ভারতের পারমাণবিক যাত্রা – Powering a Sovereign Future</title>
+<meta name="description" content="India's Nuclear Journey – Powering a Sovereign Future. A premium digital exhibition in Bengali." />
+<meta property="og:title" content="ভারতের পারমাণবিক যাত্রা – Powering a Sovereign Future" />
+<meta property="og:description" content="A premium digital exhibition showcasing India's 75+ year nuclear energy journey." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="keywords" content="India nuclear energy, Bengali exhibition, thorium, PFBR, atomic energy, বিজ্ঞান" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ============================
+   CSS VARIABLES & RESET
+   ============================ */
+:root {
+  --primary: #102A71;
+  --secondary: #183A8F;
+  --accent: #FFD447;
+  --accent-blue: #4CC9F0;
+  --white: #FFFFFF;
+  --bg-dark: #020b1a;
+  --bg-dark2: #0a1628;
+  --glass-bg: rgba(16,42,113,0.25);
+  --glass-border: rgba(76,201,240,0.15);
+  --glass-shadow: 0 8px 32px rgba(0,0,0,0.45);
+  --text-main: #e8f4fd;
+  --text-muted: rgba(232,244,253,0.7);
+  --card-bg: rgba(16,42,113,0.3);
+  --font: 'Noto Sans Bengali','Hind Siliguri',sans-serif;
+  --radius: 1.5rem;
+  --transition: 0.3s ease;
+  --font-size-base: 1.05rem;
+}
+.light-mode {
+  --bg-dark: #f0f5ff;
+  --bg-dark2: #e4ecfa;
+  --glass-bg: rgba(255,255,255,0.6);
+  --glass-border: rgba(16,42,113,0.15);
+  --glass-shadow: 0 8px 32px rgba(16,42,113,0.1);
+  --text-main: #0d1f4e;
+  --text-muted: rgba(13,31,78,0.7);
+  --card-bg: rgba(255,255,255,0.65);
+  --accent-blue: #0060a0;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;font-size:var(--font-size-base);}
+body{
+  font-family:var(--font);
+  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark2) 40%, var(--bg-dark) 100%);
+  background-attachment:fixed;
+  color:var(--text-main);
+  min-height:100vh;
+  line-height:1.75;
+  transition: background var(--transition), color var(--transition);
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;}
+strong{font-weight:700;}
+/* font size variants */
+body.fs-sm{font-size:0.92rem;}
+body.fs-lg{font-size:1.18rem;}
+
+/* ============================
+   SCROLL PROGRESS BAR
+   ============================ */
+#progress-bar{
+  position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg, var(--accent), var(--accent-blue));
+  z-index:1000;
+  box-shadow:0 0 10px var(--accent);
+  transition:width 0.1s linear;
+}
+
+/* ============================
+   NAVIGATION
+   ============================ */
+#navbar{
+  position:fixed;top:3px;left:0;right:0;z-index:999;
+  padding:0.75rem 1.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+#navbar.scrolled{
+  background:rgba(2,11,26,0.88);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 2px 20px rgba(0,0,0,0.4);
+}
+.light-mode #navbar.scrolled{
+  background:rgba(240,245,255,0.92);
+}
+.nav-logo{
+  display:flex;align-items:center;gap:0.6rem;
+  font-weight:700;font-size:1.05rem;white-space:nowrap;
+  flex-shrink:0;
+}
+.nav-logo-icon{font-size:1.5rem;color:var(--accent);filter:drop-shadow(0 0 6px var(--accent));}
+.nav-links{
+  display:flex;align-items:center;gap:0.2rem;
+  flex-wrap:nowrap;overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-links::-webkit-scrollbar{display:none;}
+.nav-link{
+  padding:0.35rem 0.65rem;border-radius:0.5rem;font-size:0.82rem;
+  opacity:0.75;transition:all var(--transition);white-space:nowrap;
+  cursor:pointer;border:none;background:transparent;color:var(--text-main);font-family:var(--font);
+}
+.nav-link:hover,.nav-link.active{
+  opacity:1;background:rgba(76,201,240,0.15);color:var(--accent);font-weight:700;
+}
+.nav-right{display:flex;align-items:center;gap:0.5rem;flex-shrink:0;}
+#search-wrap{display:flex;align-items:center;gap:0.3rem;}
+#search-input{
+  width:0;opacity:0;pointer-events:none;
+  padding:0.3rem 0.75rem;border-radius:2rem;
+  background:rgba(255,255,255,0.1);border:1px solid var(--glass-border);
+  color:var(--text-main);font-family:var(--font);font-size:0.85rem;
+  transition:width 0.3s ease,opacity 0.3s ease;outline:none;
+}
+#search-input.open{width:180px;opacity:1;pointer-events:all;}
+.icon-btn{
+  background:transparent;border:none;cursor:pointer;
+  color:var(--text-main);padding:0.4rem;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:background var(--transition);font-size:1.1rem;
+}
+.icon-btn:hover{background:rgba(76,201,240,0.15);}
+#hamburger{display:none;}
+#mobile-menu{
+  display:none;position:fixed;top:60px;left:0;right:0;z-index:998;
+  background:rgba(2,11,26,0.96);backdrop-filter:blur(16px);
+  padding:1rem;flex-direction:column;gap:0.5rem;border-bottom:1px solid var(--glass-border);
+}
+.light-mode #mobile-menu{background:rgba(240,245,255,0.97);}
+#mobile-menu.open{display:flex;}
+#mobile-menu .nav-link{text-align:center;padding:0.75rem;font-size:1rem;}
+
+/* ============================
+   HERO
+   ============================ */
+#hero{
+  position:relative;width:100%;min-height:100dvh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;text-align:center;padding:2rem 1rem;
+}
+#particle-canvas{
+  position:absolute;inset:0;pointer-events:none;z-index:0;
+}
+.hero-content{position:relative;z-index:1;max-width:860px;}
+/* atom */
+.atom-wrap{
+  width:200px;height:200px;position:relative;
+  margin:0 auto 2rem;
+  animation:atomFloat 6s ease-in-out infinite;
+}
+@keyframes atomFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.nucleus{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:22px;height:22px;border-radius:50%;
+  background:radial-gradient(circle,#ffe066,var(--accent));
+  box-shadow:0 0 20px var(--accent),0 0 40px rgba(255,212,71,0.4);
+  z-index:3;
+}
+.pulse-ring{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  border-radius:50%;border:1.5px solid rgba(76,201,240,0.3);
+  animation:pulse 3s ease-out infinite;
+}
+.pulse-ring:nth-child(2){width:80px;height:80px;animation-delay:0s;}
+.pulse-ring:nth-child(3){width:130px;height:130px;animation-delay:0.8s;}
+.pulse-ring:nth-child(4){width:180px;height:180px;animation-delay:1.6s;}
+@keyframes pulse{0%{opacity:0.8;transform:translate(-50%,-50%) scale(0.95);}100%{opacity:0;transform:translate(-50%,-50%) scale(1.25);}}
+.atom-svg{position:absolute;inset:0;width:100%;height:100%;}
+.orbit{fill:none;stroke:var(--accent-blue);stroke-width:1.2;opacity:0.75;}
+.electron{fill:var(--accent-blue);}
+.orbit1{animation:orbit1 3s linear infinite;}
+.orbit2{animation:orbit2 4s linear infinite;}
+.orbit3{animation:orbit3 5s linear infinite;}
+@keyframes orbit1{from{transform:rotate(0deg) translateZ(0);}to{transform:rotate(360deg) translateZ(0);}}
+@keyframes orbit2{from{transform:rotate(60deg);}to{transform:rotate(420deg);}}
+@keyframes orbit3{from{transform:rotate(120deg);}to{transform:rotate(480deg);}}
+.hero-title{
+  font-size:clamp(2.4rem,7vw,5rem);font-weight:700;
+  line-height:1.15;margin-bottom:1rem;
+  background:linear-gradient(135deg,#fff 40%,var(--accent-blue));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:fadeUp 0.9s 0.3s both;
+}
+.hero-sub{
+  font-size:clamp(1rem,2.5vw,1.35rem);
+  color:var(--accent-blue);margin-bottom:2.5rem;
+  animation:fadeUp 0.9s 0.6s both;
+}
+.light-mode .hero-sub{color:var(--primary);}
+.hero-btn{
+  display:inline-block;padding:1rem 2.5rem;
+  background:linear-gradient(135deg,var(--accent),#ffbd00);
+  color:var(--primary);font-weight:700;font-size:1.1rem;
+  border-radius:3rem;border:none;cursor:pointer;font-family:var(--font);
+  box-shadow:0 0 25px rgba(255,212,71,0.45);
+  transition:transform 0.25s,box-shadow 0.25s;
+  animation:fadeUp 0.9s 0.9s both;
+  text-decoration:none;
+  position:relative;overflow:hidden;
+}
+.hero-btn:hover{transform:scale(1.05);box-shadow:0 0 40px rgba(255,212,71,0.7);}
+.hero-btn::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,0.2);
+  transform:translateX(-100%);transition:transform 0.35s;
+}
+.hero-btn:hover::after{transform:translateX(0);}
+.scroll-arrow{
+  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
+  color:var(--accent-blue);font-size:1.8rem;
+  animation:bounce 2s infinite;opacity:0.8;
+}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ============================
+   INTRO + TOC
+   ============================ */
+#intro{
+  max-width:960px;margin:0 auto;padding:5rem 1.5rem 2rem;
+}
+.glass-card{
+  background:var(--glass-bg);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  box-shadow:var(--glass-shadow);
+  padding:2.5rem;
+  transition:background var(--transition),border-color var(--transition);
+}
+.intro-text{
+  font-size:clamp(1.05rem,2.5vw,1.3rem);
+  line-height:1.85;text-align:center;margin-bottom:1.5rem;
+}
+.reading-time{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:rgba(76,201,240,0.12);
+  border:1px solid rgba(76,201,240,0.2);
+  padding:0.4rem 1.2rem;border-radius:3rem;
+  font-size:0.85rem;color:var(--accent-blue);
+  margin:0 auto;display:block;width:fit-content;
+}
+.toc-title{
+  font-size:2rem;font-weight:700;text-align:center;
+  margin:3.5rem 0 1.5rem;
+}
+.toc-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1rem;
+}
+.toc-item{
+  display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;
+  background:var(--glass-bg);border:1px solid var(--glass-border);
+  border-radius:1rem;cursor:pointer;transition:all var(--transition);
+  border-left:3px solid transparent;
+  text-decoration:none;color:var(--text-main);
+}
+.toc-item:hover{
+  background:rgba(76,201,240,0.1);
+  border-left-color:var(--accent);
+  transform:translateX(4px);
+}
+.toc-num{
+  min-width:2.5rem;height:2.5rem;border-radius:50%;
+  background:var(--primary);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:0.9rem;
+  box-shadow:0 0 10px rgba(16,42,113,0.5);
+  flex-shrink:0;
+}
+.light-mode .toc-num{background:var(--accent);color:var(--primary);}
+.toc-label{font-size:0.78rem;color:var(--accent-blue);font-weight:600;margin-bottom:0.1rem;}
+.toc-text{font-weight:600;font-size:0.9rem;line-height:1.35;}
+
+/* ============================
+   PANELS
+   ============================ */
+.panels-wrap{max-width:900px;margin:0 auto;padding:0 1.25rem 5rem;}
+.panel-section{
+  margin:5rem 0;position:relative;
+  opacity:0;transform:translateY(40px);
+  transition:opacity 0.65s ease, transform 0.65s ease;
+}
+.panel-section.visible{opacity:1;transform:translateY(0);}
+.panel-card{
+  background:var(--glass-bg);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  box-shadow:var(--glass-shadow);
+  padding:2.5rem 2rem;position:relative;overflow:hidden;
+  transition:background var(--transition);
+}
+.panel-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:4px;height:100%;
+  background:linear-gradient(to bottom,var(--accent),var(--accent-blue));
+  box-shadow:0 0 12px var(--accent);
+  border-radius:0 0 0 var(--radius);
+  transition:width 0.3s;
+}
+.panel-card:hover::before{width:6px;}
+.panel-header{display:flex;align-items:flex-start;gap:1.25rem;margin-bottom:2rem;}
+.panel-num{
+  font-size:3.5rem;font-weight:800;color:var(--accent);opacity:0.18;
+  line-height:1;flex-shrink:0;font-feature-settings:"tnum";
+}
+.panel-meta{flex:1;}
+.panel-label{font-size:0.8rem;color:var(--accent-blue);font-weight:700;letter-spacing:0.08em;margin-bottom:0.3rem;}
+.panel-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:700;line-height:1.25;}
+.panel-content{font-size:1rem;line-height:1.85;}
+
+/* ============================
+   DIALOGUE BUBBLES
+   ============================ */
+.dialogue{margin:2rem 0;display:flex;flex-direction:column;gap:1.25rem;}
+.bubble-row{display:flex;gap:0.75rem;align-items:flex-start;}
+.bubble-row.scientist{flex-direction:row-reverse;}
+.avatar{font-size:1.8rem;flex-shrink:0;margin-top:0.2rem;}
+.bubble{
+  max-width:82%;padding:1rem 1.25rem;border-radius:1.25rem;
+  line-height:1.75;position:relative;
+}
+.bubble-row.student .bubble{
+  background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.3);
+  border-top-left-radius:0.25rem;color:var(--text-main);
+}
+.bubble-row.scientist .bubble{
+  background:rgba(20,184,166,0.15);border:1px solid rgba(20,184,166,0.3);
+  border-top-right-radius:0.25rem;color:var(--text-main);
+  text-align:right;
+}
+.bubble-role{font-size:0.75rem;font-weight:700;opacity:0.65;margin-bottom:0.3rem;}
+
+/* ============================
+   INSIGHT CARD
+   ============================ */
+.insight-card{
+  background:rgba(255,212,71,0.08);
+  border-left:4px solid #f59e0b;
+  border-radius:0 1rem 1rem 0;
+  padding:1.5rem;margin:1.75rem 0;
+  position:relative;overflow:hidden;
+}
+.light-mode .insight-card{background:rgba(255,212,71,0.15);}
+.insight-icon-bg{
+  position:absolute;top:0.5rem;right:0.75rem;
+  font-size:3.5rem;opacity:0.08;transform:rotate(12deg);
+  pointer-events:none;
+}
+.insight-title{
+  font-size:1rem;font-weight:700;color:#f59e0b;
+  display:flex;align-items:center;gap:0.5rem;margin-bottom:0.85rem;
+}
+.insight-body{color:var(--text-main);font-size:0.97rem;}
+.insight-body ul{list-style:disc;padding-left:1.25rem;}
+.insight-body li{margin-bottom:0.5rem;}
+.light-mode .insight-card .insight-body{color:#4a2c00;}
+.light-mode .insight-title{color:#92400e;}
+
+/* three-stage boxes */
+.stage-list{display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;}
+.stage-item{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,212,71,0.2);
+  border-radius:0.75rem;padding:0.85rem 1rem;font-size:0.95rem;
+}
+.light-mode .stage-item{background:rgba(255,212,71,0.12);}
+
+/* ============================
+   QUOTE CARD
+   ============================ */
+.quote-card{
+  text-align:center;padding:2.5rem 1rem;margin:2rem 0;
+  position:relative;
+}
+.quote-mark{
+  font-size:5rem;color:var(--accent);opacity:0.15;
+  font-family:Georgia,serif;line-height:1;
+  position:absolute;top:0.5rem;left:50%;transform:translateX(-50%);
+}
+.quote-text{
+  font-size:clamp(1.1rem,2.5vw,1.55rem);font-style:italic;font-weight:600;
+  color:var(--accent);line-height:1.5;position:relative;z-index:1;
+}
+.light-mode .quote-text{color:#b45309;}
+.quote-line{
+  width:3.5rem;height:3px;background:rgba(255,212,71,0.4);
+  border-radius:2px;margin:1.25rem auto 0;
+}
+
+/* ============================
+   PM TWEET CARD
+   ============================ */
+.tweet-card{
+  background:rgba(59,130,246,0.1);border-left:4px solid #60a5fa;
+  border-radius:0 1rem 1rem 0;padding:1.25rem 1.5rem;margin:1.5rem 0;
+}
+.tweet-card .tw-label{font-weight:700;color:#60a5fa;margin-bottom:0.5rem;font-size:0.9rem;}
+.tweet-card p{font-style:italic;font-size:0.97rem;}
+
+/* ============================
+   DATA TABLES
+   ============================ */
+.table-wrap{overflow-x:auto;margin:1.5rem 0;border-radius:0.75rem;}
+table{width:100%;border-collapse:collapse;font-size:0.9rem;}
+thead th{
+  background:var(--primary);color:var(--accent);
+  padding:0.75rem 1rem;text-align:left;font-weight:700;
+  white-space:nowrap;
+}
+.light-mode thead th{background:rgba(16,42,113,0.12);color:var(--primary);}
+tbody tr{border-bottom:1px solid var(--glass-border);}
+tbody tr:hover{background:rgba(76,201,240,0.07);}
+tbody td{padding:0.7rem 1rem;vertical-align:top;line-height:1.5;}
+tbody tr:last-child{border-bottom:none;}
+
+/* ============================
+   PANEL NAVIGATION ARROWS
+   ============================ */
+.panel-nav{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:2.5rem;padding-top:1.5rem;
+  border-top:1px solid var(--glass-border);
+}
+.panel-nav-btn{
+  display:flex;align-items:center;gap:0.4rem;
+  font-size:0.88rem;font-weight:600;
+  color:var(--accent-blue);text-decoration:none;
+  padding:0.5rem 1rem;border-radius:0.5rem;
+  transition:background var(--transition), color var(--transition);
+}
+.panel-nav-btn:hover{background:rgba(76,201,240,0.1);}
+
+/* ============================
+   CONTROL PANEL (FAB)
+   ============================ */
+#control-panel{
+  position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;
+  display:flex;flex-direction:column;align-items:center;gap:0.5rem;
+}
+.fab{
+  background:rgba(10,22,50,0.9);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid var(--glass-border);
+  border-radius:3rem;padding:0.5rem;
+  display:flex;flex-direction:column;gap:0.25rem;
+  box-shadow:0 4px 20px rgba(0,0,0,0.4);
+}
+.light-mode .fab{background:rgba(240,245,255,0.9);}
+.fab-btn{
+  width:2.5rem;height:2.5rem;border-radius:50%;
+  background:transparent;border:none;cursor:pointer;
+  color:var(--text-main);font-family:var(--font);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;transition:background var(--transition);
+  position:relative;
+}
+.fab-btn:hover{background:rgba(76,201,240,0.15);}
+.fab-badge{
+  position:absolute;bottom:-2px;right:-2px;
+  background:var(--accent);color:var(--primary);
+  width:1rem;height:1rem;border-radius:50%;font-size:0.6rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+#back-top{
+  width:2.75rem;height:2.75rem;border-radius:50%;
+  background:var(--secondary);color:#fff;
+  border:1px solid var(--glass-border);cursor:pointer;
+  display:none;align-items:center;justify-content:center;font-size:1.2rem;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);transition:all var(--transition);
+}
+#back-top:hover{transform:translateY(-3px);box-shadow:0 6px 24px rgba(0,0,0,0.4);}
+#back-top.show{display:flex;}
+
+/* ============================
+   FOOTER
+   ============================ */
+footer{
+  text-align:center;padding:3rem 1rem;
+  font-size:0.88rem;opacity:0.55;
+}
+
+/* ============================
+   SEARCH HIGHLIGHT
+   ============================ */
+mark{background:rgba(255,212,71,0.35);color:inherit;border-radius:2px;}
+
+/* ============================
+   PRINT STYLES
+   ============================ */
+@media print{
+  #navbar,#progress-bar,#control-panel,#particle-canvas,.scroll-arrow{display:none!important;}
+  body{background:#fff!important;color:#000!important;}
+  .glass-card,.panel-card{background:#fff!important;border:1px solid #ccc!important;box-shadow:none!important;}
+  .panel-section{opacity:1!important;transform:none!important;}
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+@media(max-width:768px){
+  .nav-links{display:none;}
+  #hamburger{display:flex;}
+  .panel-card{padding:1.75rem 1.25rem;}
+  .panel-num{font-size:2.5rem;}
+  .atom-wrap{width:150px;height:150px;}
+  .toc-grid{grid-template-columns:1fr;}
+  .bubble{max-width:90%;}
+}
+@media(max-width:480px){
+  .hero-title{font-size:2rem;}
+  .panel-card{padding:1.25rem 1rem;}
+  .glass-card{padding:1.5rem 1.25rem;}
+}
+
+/* ============================
+   ANIMATIONS
+   ============================ */
+.fade-in{animation:fadeUp 0.7s both;}
+</style>
+</head>
+<body>
+
+<!-- Progress Bar -->
+<div id="progress-bar"></div>
+
+<!-- Navigation -->
+<nav id="navbar" role="navigation" aria-label="প্রদর্শনী নেভিগেশন">
+  <div class="nav-logo">
+    <span class="nav-logo-icon">⚛</span>
+    <span>Nuclear Journey</span>
+  </div>
+  <div class="nav-links" id="nav-links">
+    <button class="nav-link" onclick="scrollToPanel(1)">পানেল ১</button>
+    <button class="nav-link" onclick="scrollToPanel(2)">পানেল ২</button>
+    <button class="nav-link" onclick="scrollToPanel(3)">পানেল ৩</button>
+    <button class="nav-link" onclick="scrollToPanel(4)">পানেল ৪</button>
+    <button class="nav-link" onclick="scrollToPanel(5)">পানেল ৫</button>
+    <button class="nav-link" onclick="scrollToPanel(6)">পানেল ৬</button>
+    <button class="nav-link" onclick="scrollToPanel(7)">পানেল ৭</button>
+    <button class="nav-link" onclick="scrollToPanel(8)">পানেল ৮</button>
+  </div>
+  <div class="nav-right">
+    <div id="search-wrap">
+      <input type="search" id="search-input" placeholder="সন্ধান করুন..." aria-label="সন্ধান" />
+      <button class="icon-btn" id="search-btn" title="সন্ধান" aria-label="সন্ধান খুলুন">🔍</button>
+    </div>
+    <button class="icon-btn" id="hamburger" onclick="toggleMobileMenu()" aria-label="মেনু">☰</button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" role="menu">
+  <button class="nav-link" onclick="scrollToPanel(1);toggleMobileMenu()">পানেল ১ – অতীতের বোঝা</button>
+  <button class="nav-link" onclick="scrollToPanel(2);toggleMobileMenu()">পানেল ২ – স্বপ্নের স্থপতি</button>
+  <button class="nav-link" onclick="scrollToPanel(3);toggleMobileMenu()">পানেল ৩ – থোরিয়ামের সুবিধা</button>
+  <button class="nav-link" onclick="scrollToPanel(4);toggleMobileMenu()">পানেল ৪ – তিন-পর্যায়</button>
+  <button class="nav-link" onclick="scrollToPanel(5);toggleMobileMenu()">পানেল ৫ – ক্রিটিক্যালিটি</button>
+  <button class="nav-link" onclick="scrollToPanel(6);toggleMobileMenu()">পানেল ৬ – নেট-জিরো</button>
+  <button class="nav-link" onclick="scrollToPanel(7);toggleMobileMenu()">পানেল ৭ – নির্মম সত্য</button>
+  <button class="nav-link" onclick="scrollToPanel(8);toggleMobileMenu()">পানেল ৮ – সার্বভৌমত্ব</button>
+</div>
+
+<!-- ============================
+     HERO
+     ============================ -->
+<section id="hero" aria-label="প্রধান ব্যানার">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <div class="atom-wrap" aria-hidden="true">
+      <div class="nucleus"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <div class="pulse-ring"></div>
+      <svg class="atom-svg" viewBox="0 0 200 200">
+        <g class="orbit1" style="transform-origin:100px 100px">
+          <ellipse class="orbit" cx="100" cy="100" rx="90" ry="28"/>
+          <circle class="electron" cx="190" cy="100" r="5"/>
+        </g>
+        <g class="orbit2" style="transform-origin:100px 100px;transform:rotate(60deg)">
+          <ellipse class="orbit" cx="100" cy="100" rx="90" ry="28"/>
+          <circle class="electron" cx="190" cy="100" r="5"/>
+        </g>
+        <g class="orbit3" style="transform-origin:100px 100px;transform:rotate(120deg)">
+          <ellipse class="orbit" cx="100" cy="100" rx="90" ry="28"/>
+          <circle class="electron" cx="190" cy="100" r="5"/>
+        </g>
+      </svg>
+    </div>
+
+    <h1 class="hero-title">ভারতের পারমাণবিক যাত্রা</h1>
+    <p class="hero-sub">Powering a Sovereign Future – এক সার্বভৌম ভবিষ্যৎ গঠন</p>
+    <a href="#intro" class="hero-btn">প্রদর্শনী শুরু করুন</a>
+  </div>
+  <div class="scroll-arrow" aria-hidden="true">↓</div>
+</section>
+
+<!-- ============================
+     INTRO + TABLE OF CONTENTS
+     ============================ -->
+<section id="intro" aria-label="পরিচয় ও সূচিপত্র">
+  <div class="glass-card" style="text-align:center;">
+    <p class="intro-text">"এই প্রদর্শনীটি ভারতের পারমাণবিক শক্তি কর্মসূচির ৭৫+ বছরের যাত্রার কথা বলে — জীবাশ্ম জ্বালানির নির্ভরতা থেকে সার্বভৌম পারমাণবিক শক্তির দিকে।"</p>
+    <span class="reading-time">🕐 পড়ার আনুমানিক সময়: <strong>১২ মিনিট</strong></span>
+  </div>
+
+  <h2 class="toc-title">সূচিপত্র</h2>
+  <div class="toc-grid">
+    <a href="#panel-1" class="toc-item">
+      <div class="toc-num">০১</div>
+      <div><div class="toc-label">পানেল ১</div><div class="toc-text">অতীতের বোঝা – জীবাশ্ম জ্বালানির ওপর নির্ভরতা</div></div>
+    </a>
+    <a href="#panel-2" class="toc-item">
+      <div class="toc-num">০২</div>
+      <div><div class="toc-label">পানেল ২</div><div class="toc-text">স্বপ্নের স্থপতি – পারমাণবিক দর্শনের সূচনা</div></div>
+    </a>
+    <a href="#panel-3" class="toc-item">
+      <div class="toc-num">০৩</div>
+      <div><div class="toc-label">পানেল ৩</div><div class="toc-text">থোরিয়ামের সুবিধা – ভারতের নিজস্ব জ্বালানি সম্পদ</div></div>
+    </a>
+    <a href="#panel-4" class="toc-item">
+      <div class="toc-num">০৪</div>
+      <div><div class="toc-label">পানেল ৪</div><div class="toc-text">তিন-পর্যায়ের পারমাণবিক কর্মসূচি – মাস্টার প্ল্যান</div></div>
+    </a>
+    <a href="#panel-5" class="toc-item">
+      <div class="toc-num">০৫</div>
+      <div><div class="toc-label">পানেল ৫</div><div class="toc-text">ক্রিটিক্যালিটি – বিজ্ঞানিক যুগান্তকারী অগ্রগতি</div></div>
+    </a>
+    <a href="#panel-6" class="toc-item">
+      <div class="toc-num">০৬</div>
+      <div><div class="toc-label">পানেল ৬</div><div class="toc-text">নেট-জিরো এবং সুরক্ষিত ভবিষ্যৎ গঠন</div></div>
+    </a>
+    <a href="#panel-7" class="toc-item">
+      <div class="toc-num">০৭</div>
+      <div><div class="toc-label">পানেল ৭</div><div class="toc-text">নির্মম সত্য – চ্যালেঞ্জ, ঝুঁকি এবং উদ্ভাবন</div></div>
+    </a>
+    <a href="#panel-8" class="toc-item">
+      <div class="toc-num">০৮</div>
+      <div><div class="toc-label">পানেল ৮</div><div class="toc-text">শক্তি সার্বভৌমত্বের সূর্যোদয়</div></div>
+    </a>
+  </div>
+</section>
+
+<!-- ============================
+     PANELS
+     ============================ -->
+<div class="panels-wrap">
+
+  <!-- PANEL 1 -->
+  <article id="panel-1" class="panel-section" data-panel="1">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০১</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ১</div>
+          <h2 class="panel-title">অতীতের বোঝা – জীবাশ্ম জ্বালানির ওপর নির্ভরতা</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>শুরুর দিকে ভারত কীভাবে এত বিশাল এবং ক্রমবর্ধমান একটি জাতির শক্তির যোগান দেত?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>কয়েক দশক ধরে কয়লাই ছিল আমাদের অগ্রগতির ভিত্তিপ্রস্তর, যা আমাদের মোট বিদ্যুতের ৭০%-এরও বেশি যোগান দেত। কিন্তু আমাদের সরবরাহ শৃঙ্খলের দিকে একটু ভালো করে তাকাও—পরিবহন ও শিল্পের চাহিদা মেটাতে আমাদের অপরিশোধিত তেলের ৮৫% এখনও আমদানি করতে হয়। আমরা কেবল জ্বালানিই আমদানি করছিলাম না; আমরা অস্থিরতাও আমদানি করছিলাম। বিশ্বব্যাপী একটি ছোট অস্থিরতার তরঙ্গও লক্ষ লক্ষ মানুষকে অন্ধকারে ঠেলে দিতে পারে।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>কিন্তু ওই ধোঁয়ার দিকে তাকালে মনে হয়… এর পেছনে কোনো বড় খেসারত বা আড়াল করা সমস্যা ছিল, তাই না?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>একদম ঠিক। আমরা দুটি উপায়ে এর মূল্য চুকিয়েছি: এক, কার্বনের মাধ্যমে যা আমাদের আকাশকে শ্বাসরুদ্ধ করে তুলেছিল, এবং দুই, বিদেশী তেলের ওপর অতিরিক্ত নির্ভরতা। প্রকৃত সার্বভৌমত্ব অর্জন করতে হলে আমাদের এই চক্র ভেঙে বেরিয়ে আসতে হবে—আমরা তা উপলব্ধি করেছিলাম। আমাদের প্রয়োজন ছিল এমন এক শক্তি উৎস, যা পরিচ্ছন্ন, নিরবচ্ছিন্ন এবং সবচেয়ে গুরুত্বপূর্ণভাবে, সম্পূর্ণ দেশীয়।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">🔬</div>
+          <div class="insight-title">🔬 বিজ্ঞানিক দৃষ্টিভঙ্গি: জীবাশ্ম জ্বালানির অদৃশ্য খেসারত</div>
+          <div class="insight-body">
+            <ul>
+              <li><strong>বায়ুমণ্ডলীয় দূষক:</strong> কয়লা দহনের ফলে বিপুল পরিমাণে CO₂, SO₂ এবং NOₓ নির্গত হয়, যা শহুরে ধোঁয়াশা (smog) এবং বিশ্ব উষ্ণায়নের প্রধান চালিকাশক্তি।</li>
+              <li><strong>জ্বালানি অনিরাপত্তা:</strong> ৮৫% আমদানিনির্ভর এই ব্যবস্থা আন্তর্জাতিক বাজারের ওঠানামার সামনে দেশকে কৌশলগতভাবে ঝুঁকিপূর্ণ করে তোলে।</li>
+              <li><strong>মূল লক্ষ্য:</strong> জলবায়ুর সঙ্গে আপস না করে দ্রুত ক্রমবর্ধমান শক্তির চাহিদা টেকসই উপায়ে মেটাতে পারমাণবিক ও নবায়নযোগ্য শক্তির একটি মিশ্র (hybrid) মডেল তৈরি করাই প্রধান পথ।</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <blockquote class="quote-text">একটি টেকসই ভবিষ্যতের জন্য কার্বন-নির্ভর জ্বালানি থেকে পরিচ্ছন্ন ও সার্বভৌম শক্তি ব্যবস্থার দিকে উত্তরণ প্রয়োজন।</blockquote>
+          <div class="quote-line"></div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <span></span>
+        <a href="#panel-2" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 2 -->
+  <article id="panel-2" class="panel-section" data-panel="2">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০২</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ২</div>
+          <h2 class="panel-title">স্বপ্নের স্থপতি – পারমাণবিক দর্শনের সূচনা</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>কিন্তু পারমাণবিক শক্তি... তা কি মানুষকে হিরোশিমা এবং নাগাসাকির পরমাণু বোমাবর্ষণের কথা মনে করিয়ে দেয় না? এটি কি খুব বিপজ্জনক নয়?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>বিজ্ঞান একটি হাতিয়ার, আমাদের নিজেদের উদ্দেশ্যের একটি আয়না। ড. হোমি ভাভা, আমাদের পারমাণবিক স্বপ্নের স্থপতি এবং ভারতের পারমাণবিক কর্মসূচির জনক, পরমাণুকে যুদ্ধের অস্ত্র হিসেবে দেখেননি; তিনি একে শান্তি ও অগ্রগতির এক নীরব কর্মী হিসেবে কল্পনা করেছিলেন। লক্ষ লক্ষ মানুষকে দারিদ্র্য থেকে মুক্ত করার একমাত্র পথ হিসেবে তিনি একে প্রত্যক্ষ করেছিলেন।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>আর আমরা কি এটি সম্পূর্ণ নিজেদের শক্তিতে তৈরি করেছি?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>হ্যাঁ। ১৯৪৮ সালে পরমাণু শক্তি কমিশন গঠন থেকে শুরু করে ১৯৭৪ সালের ১৮ মে 'স্মাইলিং বুদ্ধ' পরীক্ষা পর্যন্ত ভারত তার কৌশলগত স্বায়ত্তশাসন নিশ্চিত করেছিল। এই দর্শনকে এগিয়ে নিয়ে গিয়েছিলেন একদল যুগান্তকারী ব্যক্তিত্ব—বিক্রম সারাভাইয়ের উন্নয়নমুখী দৃষ্টিভঙ্গি, ইন্দিরা গান্ধীর রাজনৈতিক সংকল্প, এবং এ. পি. জে. আবদুল কালাম ও অটল বিহারী বাজপেয়ীর নেতৃত্বে প্রযুক্তির বিশাল অগ্রগতি।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">⚛️</div>
+          <div class="insight-title">⚛️ বিজ্ঞানিক দৃষ্টিভঙ্গি: নিউক্লীয় বিভাজন (Nuclear Fission)</div>
+          <div class="insight-body">
+            <p>পারমাণবিক শক্তি 'সবল নিউক্লীয় বল' (Strong Nuclear Force)-কে কাজে লাগায়। ভারী নিউক্লিওসকে বিভক্ত করে আমরা ভরকে শক্তিতে রূপান্তরিত করি, যা যেকোনো রাসায়নিক জ্বালানির চেয়ে প্রতি গ্রামে লক্ষ লক্ষ গুণ বেশি শক্তি উৎপন্ন করে।</p>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <blockquote class="quote-text">এটি কেবল একটি পরীক্ষা ছিল না—এটি ছিল প্রযুক্তিগত আত্মনির্ভরতার একটি ঘোষণা।</blockquote>
+          <div class="quote-line"></div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-1" class="panel-nav-btn">← আগের পানেল</a>
+        <a href="#panel-3" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 3 -->
+  <article id="panel-3" class="panel-section" data-panel="3">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০৩</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ৩</div>
+          <h2 class="panel-title">থোরিয়ামের সুবিধা – ভারতের নিজস্ব জ্বালানি সম্পদ</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>আমাদের গল্পে থোরিয়ামকে 'নায়ক' (HERO) হিসেবে তুলে ধরা হচ্ছে কেন? এটি কি সত্যিই ইউরেনিয়ামের বিকল্প হতে পারে?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>সীমিত ইউরেনিয়াম নিয়ে ভারতের যাত্রা কঠিন ছিল, কিন্তু থোরিয়ামের ক্ষেত্রে আমাদের হাতে রয়েছে ট্রাম্প কার্ড। বিশ্বের বৃহত্তম থোরিয়াম মজুতের অন্যতম মালিক আমরা (আনুমানিক ২০-২৫%)। আমাদের সমুদ্র সৈকতগুলোকে কেবল উপকূলরেখা হিসেবে নয়, বরং দীর্ঘমেয়াদী জ্বালানি টেকসই নিশ্চিত করার অপেক্ষায় থাকা বিশালাকার প্রাকৃতিক ব্যাটারি হিসেবে ভাবো।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>শক্তির পরিমাণের দিক থেকে এটি কি সত্যিই এতটা আলাদা?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>এটি রূপান্তরকারী! প্রতিদিন ৫০০ গিগাওয়াট (GW) সমমানের বিশাল খরচের হারেও, আমাদের থোরিয়াম মজুত ভারতকে ৪০০ বছর ধরে বিদ্যুৎ দিতে পারে। এটি তুলনামূলকভাবে পরিচ্ছন্ন, অধিক পরিমানে বিদ্যমান এবং সবচেয়ে গুরুত্বপূর্ণ বিষয়—এটি সম্পূর্ণরূপে আমাদের।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">🔄</div>
+          <div class="insight-title">🔄 বিজ্ঞানিক ব্যাখ্যা: থোরিয়াম চক্র (The Thorium Cycle)</div>
+          <div class="insight-body">
+            <ul>
+              <li><strong>উর্বর থেকে ফিসাইল (Fertile to Fissile):</strong> থোরিয়াম-২৩২ হলো 'ফার্টাইল' (উর্বর)। চুল্লির ভেতরে এটি নিউট্রন শোষণ করে ইউরেনিয়াম-২৩৩-এ পরিণত হয়, যা একটি অত্যন্ত শক্তিশালী পারমাণবিক জ্বালানি।</li>
+              <li><strong>দক্ষতা ও বর্জ্য:</strong> থোরিয়াম চক্রটি অত্যন্ত দক্ষ এবং ঐতিহ্যবাহী ইউরেনিয়াম চক্রের তুলনায় উল্লেখযোগ্যভাবে কম দীর্ঘস্থায়ী তেজস্ক্রিয় বর্জ্য উৎপন্ন করে।</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-2" class="panel-nav-btn">← আগের পানেল</a>
+        <a href="#panel-4" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 4 -->
+  <article id="panel-4" class="panel-section" data-panel="4">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০৪</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ৪</div>
+          <h2 class="panel-title">তিন-পর্যায়ের পারমাণবিক কর্মসূচি – মাস্টার প্ল্যান</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>থোরিয়াম যদি এত প্রাচুর্যময় হয়, তবে দেরির কারণ কী? আমরা কেন আজই এটি ব্যবহার করছি না?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>থোরিয়াম হলো একটি 'ভেজা কাঠের গুঁড়ি'র মতো। এটি নিজে থেকে জ্বলবে না; এর জন্য একটি 'প্রাথমিক আগুন' প্রয়োজন। ড. ভাভার তিন-পর্যায়ের পরিকল্পনা হলো সেই আগুন জ্বালানোর কৌশল। আমরা ইউরেনিয়াম ব্যবহার করে প্লুটোনিয়াম তৈরি করি, তারপর প্লুটোনিয়াম ব্যবহার করে থোরিয়ামকে 'পোড়াই'।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>এটি একটি বহুপ্রজন্মের রিলে রেস! ব্যাটনটি এখন কোথায়?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>আমরা ঠিক চূড়ান্ত পর্যায়ে এসে পৌঁছেছি। ২০২৬ সালের ৬ এপ্রিল ভারত দ্বিতীয় ধাপে ব্যাটন হস্তান্তর করেছে। আমরা পরীক্ষামূলক পদার্থবিজ্ঞান থেকে বাস্তবতায় পদার্পণ করেছি।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">📊</div>
+          <div class="insight-title">📊 তিনটি পর্যায় (The Three Stages)</div>
+          <div class="insight-body">
+            <div class="stage-list">
+              <div class="stage-item"><strong>ধাপ ১: প্রেশারাইজড হেভি ওয়াটার রিঅ্যাক্টর (PHWRs):</strong> প্রাকৃতিক ইউরেনিয়াম ব্যবহার করে বিদ্যুৎ এবং প্লুটোনিয়াম তৈরি করা হয়। ভারতে বিভিন্ন রাজ্যে মোট ২০টি PHWR রিঅ্যাক্টর রয়েছে যেগুলো থেকে বিতরণ করা বিদ্যুৎ উৎপাদিত হয়।</div>
+              <div class="stage-item"><strong>ধাপ ২: ফাস্ট ব্রিডার রিঅ্যাক্টর (FBRs):</strong> এই চুল্লিগুলো খরচের চেয়ে বেশি জ্বালানি উৎপন্ন করে, যা ধাপ ৩-এর জন্য প্রয়োজনীয় প্লুটোনিয়ামের মজুত তৈরি করে।</div>
+              <div class="stage-item"><strong>ধাপ ৩: থোরিয়াম-ভিত্তিক রিঅ্যাক্টর (AHWRs):</strong> বায়বীয় শক্তি স্বাধীনতা অর্জনের জন্য আমাদের বিশাল মোনাজাইট মজুত ব্যবহার করে।</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-3" class="panel-nav-btn">← আগের পানেল</a>
+        <a href="#panel-5" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 5 -->
+  <article id="panel-5" class="panel-section" data-panel="5">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০৫</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ৫</div>
+          <h2 class="panel-title">ক্রিটিক্যালিটি – বিজ্ঞানিক যুগান্তকারী অগ্রগতি</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>আমি PFBR-এ 'ক্রিটিক্যালিটি' (Criticality) অর্জনের শিরোনাম দেখেছি। সিনেমায় তো এর মানে বিপর্যয়ের কাউন্টডাউন বোঝায়!</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>(হেসে) বিজ্ঞানে, 'ক্রিটিক্যালিটি' হলো একটি উদযাপনের মুহূর্ত! এর অর্থ হলো হৃদস্পন্দন শুরু হয়েছে। এটি এমন একটি অবস্থা যেখানে পারমাণবিক শৃঙ্খল বিক্রিয়া স্বনির্ভর এবং নিখুঁতভাবে নিয়ন্ত্রিত হয়। এটি ধাপ ২ এবং এর বাণিজ্যিক উৎপাদনের জন্য 'সবুজ সংকেত'।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>তাহলে আমরা কি আনুষ্ঠানিকভাবে 'ব্রিডার' প্রযুক্তিতে দক্ষতা অর্জন করেছি?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>পুরোপুরি নয়—তবে আমরা খুবই কাছাকাছি। PFBR-এর মাধ্যমে ভারত এই উন্নত প্রযুক্তিতে পা রাখছে। সময়কালের সাথে ধারাবাহিক, নির্ভরযোগ্য এবং বৃহৎ মাপের পরিচালনার মাধ্যমে প্রকৃত দক্ষতা আসবে। আমরা কেবল দেখছি না—আমরা এটি আয়ত্ত করার দ্বারপ্রান্তে রয়েছি।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">⚡</div>
+          <div class="insight-title">⚡ বিজ্ঞানিক সংজ্ঞা: ক্রিটিক্যালিটি ও তার ঊর্ধ্বে</div>
+          <div class="insight-body">
+            <p><strong>নিউট্রন গুণন গুণক (k):</strong> k হলো নিউক্লীয় শৃঙ্খল বিক্রিয়ার এক প্রজন্মে উৎপাদিত নিউট্রন সংখ্যার সাথে পূর্ববর্তী প্রজন্মে হারানো (শোষণ বা ফুটো হওয়ার মাধ্যমে) নিউট্রন সংখ্যার অনুপাত।</p>
+            <br>
+            <p><strong>ক্রিটিক্যালিটির শর্তাবলী:</strong></p>
+            <ul style="margin-top:0.5rem;">
+              <li>k = 1: সিস্টেমটি ক্রিটিক্যাল (স্থিতিশীল অবস্থা; নিউট্রন সংখ্যা ধ্রুবক থাকে)</li>
+              <li>k &lt; 1: সিস্টেমটি সাবক্রিটিক্যাল (নিউট্রন সংখ্যা হ্রাস পায়)</li>
+              <li>k &gt; 1: সিস্টেমটি সুপারক্রিটিক্যাল (নিউট্রন সংখ্যা বৃদ্ধি পায়)</li>
+            </ul>
+            <br>
+            <p><strong>নিউট্রন গুণন (k = 1):</strong> এমন একটি অবস্থা যেখানে উৎপাদিত নিউট্রন সংখ্যা হারানো নিউট্রনের সমান হয়, যা একটি স্থির শক্তি উৎপাদন নিশ্চিত করে।</p>
+            <br>
+            <p><strong>উদ্ভাবনের দিগন্ত:</strong> আমরা এখন একটি স্থিতিস্থাপক, বিকেন্দ্রীভূত শক্তি গ্রিড তৈরির জন্য অ্যাডভান্সড হেভি ওয়াটার রিঅ্যাক্টর (AHWRs) এবং স্মল মডুলার রিঅ্যাক্টর (SMRs)-কে সমন্বিত করছি।</p>
+          </div>
+        </div>
+
+        <div class="tweet-card">
+          <div class="tw-label">প্রধানমন্ত্রীর বার্তা (X/টুইটার):</div>
+          <p>"আজ ভারত তার অসামরিক পারমাণবিক যাত্রায় একটি নির্ণায়ক পদক্ষেপ গ্রহণ করল, যা তার পারমাণবিক কর্মসূচির দ্বিতীয় ধাপকে এগিয়ে নিয়ে যাচ্ছে।"</p>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-4" class="panel-nav-btn">← আগের পানেল</a>
+        <a href="#panel-6" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 6 -->
+  <article id="panel-6" class="panel-section" data-panel="6">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০৬</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ৬</div>
+          <h2 class="panel-title">নেট-জিরো এবং সুরক্ষিত ভবিষ্যৎ গঠন</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>আমরা কেন ১০০% সৌর ও বায়ু শক্তিতে যাচ্ছি না? এগুলো তো সহজ, তাই না?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>এগুলো অত্যন্ত গুরুত্বপূর্ণ, তবে এগুলো ক্ষণস্থায়ী। সূর্য অস্ত যায় এবং বাতাস থেমে যায়। একটি আধুনিক জাতির প্রয়োজন 'বেসলোড পাওয়ার' (Baseload Power)—বিদ্যুতের একটি স্থির, অবিচল প্রবাহ যা আবহাওয়ার ওপর নির্ভর করে না। পারমাণবিক শক্তি সেই ভিত্তি প্রদান করে।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>তাহলে তারা একসঙ্গে কাজ করে?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>একদম তাই। পারমাণবিক শক্তি আমাদের দায়িত্ব দেয়, আর নবায়নযোগ্য শক্তি আমাদের পরিচ্ছন্ন ও টেকসই শক্তি দেয়। উভয় মিলিয়ে ২০৭০ সালের মধ্যে 'নেট-জিরো' লক্ষ্য অর্জনের জন্য এগুলোই একমাত্র কার্যকর পথ।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">🌍</div>
+          <div class="insight-title">🌍 বিজ্ঞানিক দৃষ্টিভঙ্গি: পরিবেশগত প্রভাব</div>
+          <div class="insight-body">
+            <ul>
+              <li><strong>লাইফসাইকেল নির্গমন:</strong> পারমাণবিক শক্তির লাইফসাইকেল নির্গমন বায়ুশক্তি এবং অন্যান্য নিম্ন-কার্বন শক্তি উৎসের সাথে তুলনীয়।</li>
+              <li><strong>নবায়নযোগ্য শক্তি:</strong> সৌর শক্তি, বায়ু শক্তি, জলবিদ্যুৎ, মোট উৎপাদন, ইনস্টলেশন খরচ এবং পরিবেশগত প্রভাব।</li>
+              <li><strong>জমির ব্যবহার:</strong> পারমাণবিক শক্তির 'শক্তি ঘনত্ব' (energy density) সবচেয়ে বেশি, ফলে সৌর বা বায়ু ফার্মের তুলনায় অনেক কম জমির প্রয়োজন হয়।</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <blockquote class="quote-text">ভারসাম্যপূর্ণ শক্তিই একটি নেট-জিরো এবং সুরক্ষিত ভবিষ্যতের চাবিকাঠি।</blockquote>
+          <div class="quote-line"></div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-5" class="panel-nav-btn">← আগের পানেল</a>
+        <a href="#panel-7" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 7 -->
+  <article id="panel-7" class="panel-section" data-panel="7">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০৭</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ৭</div>
+          <h2 class="panel-title">নির্মম সত্য – চ্যালেঞ্জ, ঝুঁকি এবং উদ্ভাবন</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>আমাদের ঝুঁকিগুলো নিয়ে কথা বলতে হবে। হাজার হাজার বছর বায়বীয় বর্জ্য বা চেরনোবিলের মতো বনের পুনরাবৃত্তি সম্পর্কে কী বলবেন?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>সততার দাবি হলো ইঞ্জিনিয়ারিং দিয়ে সেই ভয়গুলোর মুখোমুখি হওয়া। আমরা ১৯৮০-র দশকের নকশা থেকে অনেক দূরে সরে এসেছি। আজকের 'প্রজন্ম ৩+' (Gen III+) এবং 'প্রজন্ম ৪' (Gen IV) রিঅ্যাক্টরগুলো 'প্যাসিভ সেফটি সিস্টেম' ব্যবহার করে।</div>
+          </div>
+        </div>
+
+        <h4 style="font-size:1.1rem;font-weight:700;margin:1.5rem 0 0.75rem;">রিঅ্যাক্টর প্রজন্মের তুলনামূলক সারণি:</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>যুগ (Era)</th>
+                <th>প্রজন্ম (Generation)</th>
+                <th>ভারতের উদাহরণ</th>
+                <th>মূল পরিবর্তন (Key Shift)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>১৯৬০-এর দশক</td><td>প্রজন্ম ১ (Gen I)</td><td>তারাপুর (BWR)</td><td>প্রাথমিক সংযোজন</td></tr>
+              <tr><td>১৯৭০-বর্তমান</td><td>প্রজন্ম ২ (Gen II)</td><td>PHWR শ্রেণী (২২০-৭০০ মেগাওয়াট)</td><td>দেশীয় সম্প্রসারণ</td></tr>
+              <tr><td>২০০০-বর্তমান</td><td>উন্নত প্রজন্ম ২ (Adv. Gen II)</td><td>IPHWR-৭০০</td><td>সুরক্ষা ও দক্ষতার উন্নয়ন</td></tr>
+              <tr><td>২০১০-ভবিষ্যৎ</td><td>প্রজন্ম ৩+ (Gen III+)</td><td>কুদানকুলাম (VVER)</td><td>প্যাসিভ সেফটি সিস্টেম</td></tr>
+              <tr><td>২০২০-ভবিষ্যৎ</td><td>প্রজন্ম ৪ (Gen IV)</td><td>PFBR, AHWR (উন্নয়নাধীন)</td><td>জ্বালানি ব্রিডিং ও টেকসইতা</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="dialogue" style="margin-top:1.5rem;">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>'প্যাসিভ' (Passive) মানে কি তাদের কাজ করার জন্য মানুষের প্রয়োজন হয় না?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>সঠিক। তারা পদার্থবিজ্ঞানের সূত্রের ওপর নির্ভর করে—মাধ্যাকর্ষণ (gravitation) এবং সংবহন (convection)। কোনো সিস্টেম অতিরিক্ত উত্তপ্ত হলে, রিঅ্যাক্টরের নিজস্ব পদার্থবিজ্ঞানই এটিকে বন্ধ করে দেয়, কোনো বিদ্যুৎ বা অপারেটরের প্রয়োজন হয় না। বর্জ্যের ক্ষেত্রে, আমরা একটি 'ক্লোজড ফুয়েল সাইকেল' ব্যবহার করি, যা ব্যবহৃত জ্বালানিকে পুনর্ব্যবহার করে গভীর ভূতাত্ত্বিক ভান্ডারে পাঠানো বর্জ্যের পরিমাণ ন্যূনতম করে।</div>
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <div class="insight-icon-bg">🛡️</div>
+          <div class="insight-title">🛡️ মূল বিজ্ঞানিক তথ্য (Key Scientific Takeaways)</div>
+          <div class="insight-body">
+            <ul>
+              <li><strong>বর্জ্য ব্যবস্থাপনা:</strong> ভারতের 'পুনর্ব্যবহার এবং পুনঃব্যবহার' নীতি সরাসরি বর্জ্য ফেলার পদ্ধতির তুলনায় বর্জ্যের পরিমাণ ৯৫% হ্রাস করে।</li>
+              <li><strong>প্যাসিভ সেফটি:</strong> প্রাকৃতিক কুলিং লুপ সম্পূর্ণরূপে বিদ্যুৎ বিচ্ছিন্ন থাকলেও নিরাপত্তা নিশ্চিত করে।</li>
+              <li><strong>তুলনামূলক ঝুঁকি:</strong> আন্তর্জাতিক পরমাণু শক্তি সংস্থা (IAEA) মতো বিশ্বমানের সংস্থার অধ্যয়ন ও মূল্যায়ন অনুযায়ী, অন্যান্য প্রধান শক্তি উৎসের তুলনায় পারমাণবিক শক্তির লাইফসাইকেল মৃত্যুর হার সর্বনিম্ন।</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <blockquote class="quote-text">পারমাণবিক শক্তি ঝুঁকিমুক্ত নয়—তবে এটি বিজ্ঞান-ভিত্তিক, কঠোরভাবে নিয়ন্ত্রিত এবং ক্রমাগত উন্নতিশীল।</blockquote>
+          <div class="quote-line"></div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-6" class="panel-nav-btn">← আগের পানেল</a>
+        <a href="#panel-8" class="panel-nav-btn">পরবর্তী পানেল →</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- PANEL 8 -->
+  <article id="panel-8" class="panel-section" data-panel="8">
+    <div class="panel-card">
+      <div class="panel-header">
+        <div class="panel-num">০৮</div>
+        <div class="panel-meta">
+          <div class="panel-label">পানেল ৮</div>
+          <h2 class="panel-title">শক্তি সার্বভৌমত্বের সূর্যোদয়</h2>
+        </div>
+      </div>
+      <div class="panel-content">
+        <div class="dialogue">
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>এটি কেবল 'আলো জ্বালিয়ে রাখা'র চেয়েও বেশি কিছু বলে মনে হচ্ছে। এটি তো বাস্তবে 'আত্মনির্ভর ভারত'!</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>এটি সার্বভৌমত্বের চূড়ান্ত রূপ। শক্তি হলো সভ্যতার মুদ্রা। থোরিয়াম চক্রে দক্ষতা অর্জনের মাধ্যমে, আমরা ভবিষ্যৎ কিনে নেওয়া একটি জাতি থেকে ভবিষ্যৎ তৈরি করা একটি জাতিতে রূপান্তরিত হচ্ছি।</div>
+          </div>
+          <div class="bubble-row student">
+            <div class="avatar">👨‍🎓</div>
+            <div class="bubble"><div class="bubble-role">ছাত্র</div>পরাধীনতা থেকে বিশ্ব নেতৃত্ব?</div>
+          </div>
+          <div class="bubble-row scientist">
+            <div class="avatar">👨‍🔬</div>
+            <div class="bubble"><div class="bubble-role">বিজ্ঞানী</div>একদম ঠিক। আমরা আর অন্যের তৈরি করা পথ অনুসরণ করছি না; আমরা পরমাণু যুগের নতুন সীমানা উন্মোচন করছি।</div>
+          </div>
+        </div>
+
+        <div style="margin:2rem 0;background:linear-gradient(135deg,rgba(76,201,240,0.08),transparent);border:1px solid rgba(76,201,240,0.2);border-radius:1rem;padding:1.75rem;">
+          <h3 style="font-size:1.3rem;font-weight:700;color:var(--accent-blue);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem;">🌅 বিজ্ঞানিক উপসংহার: দ্য গ্রেট ট্রানজিশন</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>বিষয় / ক্ষেত্র (Domain)</th>
+                  <th>পুরোনো অবস্থা (Old State)</th>
+                  <th>নতুন অবস্থা (New State)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>নির্ভরতা বনাম সার্বভৌমত্ব</td><td>আমদানিকৃত জীবাশ্ম জ্বালানির ওপর নির্ভরতা</td><td>থোরিয়ামের মাধ্যমে সম্পূর্ণ শক্তির স্বাধীনতা</td></tr>
+                <tr><td>কার্বন ও শক্তি পরিচ্ছন্নতা</td><td>উচ্চ নির্গমনকারী তাপবিদ্যুৎ</td><td>নেট-জিরো, বিজ্ঞান-চালিত বেসলোড পরিচ্ছন্ন শক্তি</td></tr>
+                <tr><td>সম্পদের প্রাপ্যতা</td><td>সীমিত ইউরেনিয়াম সম্পদ</td><td>উন্নত FBR, AHWR এবং SMR-এর উদ্ভাবন</td></tr>
+                <tr><td>জাতীয় অগ্রগতি</td><td>প্রাথমিক পরিকাঠামোর উন্নয়ন</td><td>নিরাপদ, উন্নত প্রযুক্তি রফতানি</td></tr>
+                <tr><td>বৈশ্বিক অবস্থান</td><td>অন্যদের পথ অনুসরণকারী</td><td>পরমাণু যুগে বিশ্ব অংশীদারিত্ব</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="quote-card">
+          <div class="quote-mark">"</div>
+          <blockquote class="quote-text">ভারতের পারমাণবিক যাত্রা কেবল শক্তির বিষয়ে নয়—এটি নির্ভরতা থেকে বিশ্ব নেতৃত্বের দিকে বিজ্ঞান-চালিত রূপান্তর, যা একটি আত্মনির্ভরশীল ও টেকসই ভবিষ্যৎ গড়ে তুলছে।</blockquote>
+          <div class="quote-line"></div>
+        </div>
+      </div>
+      <div class="panel-nav">
+        <a href="#panel-7" class="panel-nav-btn">← আগের পানেল</a>
+        <span></span>
+      </div>
+    </div>
+  </article>
+
+</div><!-- end panels-wrap -->
+
+<!-- Footer -->
+<footer>
+  <p>ভারতের পারমাণবিক শক্তি কর্মসূচির ৭৫+ বছর</p>
+  <p style="margin-top:0.35rem;">© 2026 National Science Exhibition – India's Nuclear Journey</p>
+</footer>
+
+<!-- Control Panel FAB -->
+<div id="control-panel" aria-label="নিয়ন্ত্রণ প্যানেল">
+  <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="উপরে যান" aria-label="উপরে যান">↑</button>
+  <div class="fab">
+    <button class="fab-btn" id="theme-btn" onclick="toggleTheme()" title="থিম পরিবর্তন">🌙</button>
+    <button class="fab-btn" id="font-btn" onclick="cycleFontSize()" title="ফন্ট সাইজ">T
+      <span class="fab-badge" id="font-badge">M</span>
+    </button>
+    <button class="fab-btn" onclick="window.print()" title="প্রিন্ট">🖨</button>
+    <button class="fab-btn" onclick="toggleFullscreen()" title="ফুলস্ক্রিন" style="display:none" id="fs-btn">⛶</button>
+  </div>
+</div>
+
+<!-- ============================
+     JAVASCRIPT
+     ============================ -->
+<script>
+(function() {
+  'use strict';
+
+  /* ---- Fullscreen support check ---- */
+  if (document.fullscreenEnabled) {
+    document.getElementById('fs-btn').style.display = 'flex';
+  }
+
+  /* ---- Particles ---- */
+  const canvas = document.getElementById('particle-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let raf;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    initParticles();
+  }
+
+  function initParticles() {
+    particles = [];
+    const count = window.innerWidth < 768 ? 18 : 32;
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2.2 + 0.8,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        a: Math.random() * 0.7 + 0.15,
+        da: (Math.random() - 0.5) * 0.015
+      });
+    }
+  }
+
+  function renderParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const isLight = document.documentElement.classList.contains('light-mode');
+    const rgb = isLight ? '16,42,113' : '76,201,240';
+
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      p.a += p.da;
+      if (p.a < 0.1 || p.a > 0.85) p.da *= -1;
+      if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${rgb},${p.a})`;
+      ctx.shadowBlur = 12;
+      ctx.shadowColor = `rgba(${rgb},0.8)`;
+      ctx.fill();
+    });
+    raf = requestAnimationFrame(renderParticles);
+  }
+
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+  renderParticles();
+
+  /* ---- Progress bar ---- */
+  const progressBar = document.getElementById('progress-bar');
+  const navbar = document.getElementById('navbar');
+
+  function updateProgress() {
+    const scrolled = document.documentElement.scrollTop;
+    const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    progressBar.style.width = (scrolled / total * 100) + '%';
+    navbar.classList.toggle('scrolled', scrolled > 60);
+    document.getElementById('back-top').classList.toggle('show', scrolled > 500);
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+
+  /* ---- Active nav highlight via IntersectionObserver ---- */
+  const navLinks = document.querySelectorAll('#nav-links .nav-link');
+  const panelSections = document.querySelectorAll('.panel-section');
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = parseInt(e.target.getAttribute('data-panel'));
+        navLinks.forEach((l, i) => l.classList.toggle('active', i + 1 === id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -45% 0px' });
+
+  panelSections.forEach(s => io.observe(s));
+
+  /* ---- Scroll reveal ---- */
+  const revealIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+
+  panelSections.forEach(s => revealIO.observe(s));
+
+  /* ---- Helper: scroll to panel ---- */
+  window.scrollToPanel = function(n) {
+    const el = document.getElementById('panel-' + n);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  /* ---- Mobile menu ---- */
+  window.toggleMobileMenu = function() {
+    const m = document.getElementById('mobile-menu');
+    m.classList.toggle('open');
+    document.getElementById('hamburger').textContent = m.classList.contains('open') ? '✕' : '☰';
+  };
+
+  /* ---- Search ---- */
+  const searchBtn = document.getElementById('search-btn');
+  const searchInput = document.getElementById('search-input');
+  let searchOpen = false;
+
+  searchBtn.addEventListener('click', () => {
+    searchOpen = !searchOpen;
+    searchInput.classList.toggle('open', searchOpen);
+    if (searchOpen) { searchInput.focus(); }
+    else { searchInput.value = ''; clearHighlights(); showAllPanels(); }
+  });
+
+  searchInput.addEventListener('input', () => {
+    const term = searchInput.value.trim().toLowerCase();
+    if (!term) { clearHighlights(); showAllPanels(); return; }
+    panelSections.forEach(panel => {
+      const text = panel.innerText.toLowerCase();
+      panel.style.display = text.includes(term) ? 'block' : 'none';
+    });
+  });
+
+  function showAllPanels() {
+    panelSections.forEach(p => p.style.display = 'block');
+  }
+  function clearHighlights() { /* placeholder for future highlight */ }
+
+  /* ---- Theme toggle ---- */
+  const themeBtn = document.getElementById('theme-btn');
+  let isDark = true;
+
+  window.toggleTheme = function() {
+    isDark = !isDark;
+    document.documentElement.classList.toggle('light-mode', !isDark);
+    themeBtn.textContent = isDark ? '🌙' : '☀️';
+    themeBtn.title = isDark ? 'লাইট মোড' : 'ডার্ক মোড';
+  };
+
+  /* ---- Font size cycle ---- */
+  const fontSizes = ['sm', 'base', 'lg'];
+  const fontLabels = { sm: 'S', base: 'M', lg: 'L' };
+  let fontIdx = 1;
+
+  window.cycleFontSize = function() {
+    fontIdx = (fontIdx + 1) % 3;
+    const sz = fontSizes[fontIdx];
+    document.body.classList.remove('fs-sm', 'fs-lg');
+    if (sz !== 'base') document.body.classList.add('fs-' + sz);
+    document.getElementById('font-badge').textContent = fontLabels[sz];
+  };
+
+  /* ---- Fullscreen ---- */
+  window.toggleFullscreen = function() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  };
+
+  /* ---- Keyboard navigation ---- */
+  let currentPanel = 0;
+  window.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (currentPanel < 8) {
+        currentPanel = Math.max(1, currentPanel + 1);
+        scrollToPanel(currentPanel);
+      }
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (currentPanel > 1) {
+        currentPanel--;
+        scrollToPanel(currentPanel);
+      }
+    }
+  });
+
+  /* ---- Update currentPanel on IntersectionObserver ---- */
+  const keyIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) currentPanel = parseInt(e.target.getAttribute('data-panel'));
+    });
+  }, { rootMargin: '-40% 0px -40% 0px' });
+  panelSections.forEach(s => keyIO.observe(s));
+
+  /* ---- Button ripple effect ---- */
+  document.querySelectorAll('.hero-btn,.panel-nav-btn,.toc-item').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.style.cssText = `
+        position:absolute;width:${size}px;height:${size}px;
+        left:${e.clientX - rect.left - size/2}px;
+        top:${e.clientY - rect.top - size/2}px;
+        border-radius:50%;
+        background:rgba(255,255,255,0.25);
+        transform:scale(0);animation:rippleAnim 0.5s ease-out;
+        pointer-events:none;z-index:99;
+      `;
+      if (!getComputedStyle(this).position || getComputedStyle(this).position === 'static') {
+        this.style.position = 'relative';
+      }
+      this.style.overflow = 'hidden';
+      this.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+
+  /* inject ripple keyframe */
+  const style = document.createElement('style');
+  style.textContent = '@keyframes rippleAnim{to{transform:scale(2.5);opacity:0;}}';
+  document.head.appendChild(style);
+
+})();
+</script>
+</body>
+</html>
